@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene>
+
+            <a-assets>
+                <!-- Using an absolute URL for the texture -->
+                <img id="floor-texture" src="https://cdn.polyhaven.com/asset_img/primary/wood_floor.png?height=780">
+                <img id="wall-texture" src="https://cdn.polyhaven.com/asset_img/primary/patterned_brick_wall_02.png?height=780">
+                <img id="poster1" src="https://cdn.polyhaven.com/gallery/bf610addeda9ea1bcc90.jpg?width=1313">
+                <img id="poster2" src="https://cdn.polyhaven.com/gallery/d2834af6d8e1b7a5a029.jpg?width=1313"> 
+                <img id="table-top" src="https://cdn.polyhaven.com/asset_img/primary/blue_painted_planks.png?height=780">
+                <img id="table-bottom" src="https://cdn.polyhaven.com/asset_img/primary/blue_painted_planks.png?height=780">  
+                <img id="carpet" src="https://cdn.polyhaven.com/asset_img/primary/dirty_carpet.png?height=780">
+              </a-assets>
+            <a-sky color="azure"></a-sky>
+
+            <!--Floor-->
+            <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" src="#floor-texture"></a-plane>
+
+            <!--walls-->
+            <a-box position="0 2.5 -5" width="10" height="5" depth="0.1" src="#wall-texture"></a-box>
+            <a-box position="-5 2.5 0" width="0.1" height="5" depth="10" src="#wall-texture"></a-box>
+            <a-box position="5 2.5 0" width="0.1" height="5" depth="10" src="#wall-texture"></a-box>
+
+            <!--posters-->
+            <a-box position="-2 2 -4.9" width="2" height="2" depth="0.01" src="#poster1"></a-box>
+            <a-box position="2 2 -4.9" width="2" height="2" depth="0.01" src="#poster2"></a-box>
+
+            <!--Carpet-->
+            <a-box position=".3 0 0" width="5" height="0.1" scale="1" depth="3" src="#carpet"></a-box>
+
+            <!--chairs-->
+            <a-cylinder position="3.5 0.5 0" radius="0.5" height="1" width="2" color="silver"></a-cylinder>
+            <a-cylinder position="-3 .5 0" radius="0.5" height="1" width="2" color="silver"></a-cylinder>
+
+            <!--Table-->
+            <!--Bottom part of table-->
+            <a-cylinder position=" 0.2 .5 0" radius="0.2" height="1" width="1" src="#table-bottom"></a-cylinder>
+            <!--Top part of table-->
+            <a-cylinder position=".2 1.1 0" radius="2" height="0.2" width="2" src="#table-top">
+                <!--Ring around table-->
+            <a-torus radius="2.2" radius-tubular="0.01" segments-tabular="1000" color="silver" rotation="90 0 0"></a-torus>
+            </a-cylinder>
+            
+
+
+        </a-scene>
+    </body>
+    </html>
